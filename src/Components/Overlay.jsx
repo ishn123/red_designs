@@ -9,13 +9,13 @@ const Overlay = () => {
         <Box display="flex" flexDirection="column" justifyContent="space-between" position="fixed" zIndex="999" height="1000px" width="100%">
             <Navbar>
             </Navbar>
-            <Box display="flex" justifyContent="space-between" position="fixed" zIndex="1" bottom="2%" padding="10px">
-                <PhoneIcon color='green' fontSize='large' sx={{ backgroundColor: "green", borderRadius: "5px" }}></PhoneIcon>
-                <Box display="flex" alignItems="center" gap="5px" justifyContent="end">
-                    <Typography component="div" sx={{ backgroundColor: "white", color: "black", borderRadius: "10px" }}>
+            <Box display="flex" justifyContent="space-between" position="fixed" zIndex="1" bottom="2%" padding="10px" width="100%">
+                <PhoneIcon color='green' fontSize='large' sx={{ backgroundColor: "green", borderRadius: "50%" }}></PhoneIcon>
+                <Box display="flex" alignItems="center" gap="5px" justifyContent="end" marginRight="20px">
+                    <Typography component="div" sx={{ backgroundColor: "gray", color: "black", borderRadius: "10px" }} fontWeight="bold">
                         Need Help?
                     </Typography>
-                    <WhatsAppIcon color='green' fontSize='large' sx={{ backgroundColor: "green", borderRadius: "5px" }}></WhatsAppIcon>
+                    <WhatsAppIcon color='green' fontSize='large' sx={{ backgroundColor: "green", borderRadius: "50%" }}></WhatsAppIcon>
                 </Box>
 
             </Box>
