@@ -1,7 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import React from 'react'
-import About from './About';
 
 const L2R = () => {
 
