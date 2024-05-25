@@ -1,0 +1,57 @@
+.about-image-container{
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-image: url(http://adamdesignstudio.com/wp-content/uploads/2018/05/brd.jpg);
+    padding-bottom: 63px;
+    border-color: #f4f4f4;
+
+}
+.about-image-main{
+    text-align: center;
+}
+.text-wrapper{
+    background-color: #000;
+}
+.text-wrapper h4{
+    color: white;
+}
+.middle-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width:35%;
+    padding: 10px;
+    text-align: center;
+}
+.middle-side p{
+    text-align: justify;
+}
+.main-content-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.text-wrapper{
+    padding: 10px;
+    margin: 10px 10px;
+    text-align: center;
+}
+.text-wrapper h4{
+    margin: 0;
+    padding: 5px;
+}
+.right-side{
+    width: 50%;
+    text-align: center;
+}
+.right-side img{
+    width: 80%;
+}

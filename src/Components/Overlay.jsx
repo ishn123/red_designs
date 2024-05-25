@@ -7,8 +7,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const Overlay = () => {
     return (
         <Box display="flex" flexDirection="column" justifyContent="space-between" position="fixed" zIndex="999" height="1000px" width="100%">
-            <Navbar>
-            </Navbar>
             <Box display="flex" justifyContent="space-between" position="fixed" zIndex="1" bottom="2%" padding="10px" width="100%">
                 <PhoneIcon color='green' fontSize='large' sx={{ backgroundColor: "green", borderRadius: "50%" }}></PhoneIcon>
                 <Box display="flex" alignItems="center" gap="5px" justifyContent="end" marginRight="20px">

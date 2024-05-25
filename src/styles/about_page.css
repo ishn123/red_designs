@@ -1,0 +1,89 @@
+.about-image-container{
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-image: url(http://adamdesignstudio.com/wp-content/uploads/2018/05/brd.jpg);
+    padding-bottom: 63px;
+    border-color: #f4f4f4;
+
+}
+.about-image-main{
+    text-align: center;
+}
+.section_title{
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    padding-top: 130px;
+    margin-top: -50px;
+}
+.clr::before{
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.clr::after{
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0
+}
+.row{
+    width: 95%;
+    margin: 0 auto;
+}
+.page_content{
+    margin-top: 80px;
+    position: relative;
+}
+.side-line{
+    background-color: #e8e7e7;
+    width: 250px;
+    height: 2px;
+    position: absolute;
+    top: 28px;
+    left: -150px;
+    margin-right: 20px;
+   
+}
+.content-wrapper{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.a-text{
+    text-align: justify;
+}
+.image-frame{
+
+    height: 200px;
+    width: 200px;
+    border: 30px solid black;
+}
+.left-side,.right-side{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.right-side{
+    align-items: center;
+    justify-content: center;
+}
+.para-wrapper{
+    vertical-align: middle;
+    word-break: normal;
+}
+#ex2{
+    height: 150px;
+    width: 250px;
+    padding: auto;
+}
+
+#bottom-left-image{
+    width: 60%;
+}

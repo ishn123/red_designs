@@ -10,25 +10,85 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import "../styles/navbar.css";
 import '@fontsource/roboto/300.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const pages = ['Home', 'About', 'Services ', 'Gallery', 'Blog', 'Contact Us'];
+    const navigate = useNavigate();
+    const pages = ['Home', 'About', 'Services', 'Gallery', 'Blog', 'Contact Us'];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+    const options = ['Interior contracting','Automation','Landscape','Interior Design','Architecture','Structural Contracting']
 
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const handleOptionNavigation = (op)=>{
+        switch(op){
+            case "Interior contracting":
+                navigate("/interiorcontract")
+                break
+            case "Automation":
+                navigate("automation")
+                break
+            case "Landscape":
+                navigate("landscape")
+                break
+
+            case "Interior Design":
+                navigate("interiordesign")
+                break
+
+            case "Architecture":
+                navigate("architecture")
+                break
+
+            case "Structural Contracting":
+                navigate("structuredesign")
+                break
+
+            default:
+                navigate("/")
+        }
+    }
 
     const handleOpenNavMenu = (event) => {
         console.log(event.currentTarget);
         setAnchorElNav(event.currentTarget);
     };
     const handleOpenUserMenu = (event) => {
+        
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (event) => {
+        let text = event.currentTarget?.innerText?.toLowerCase();
+        switch(text){
+            case "about":{
+                navigate('/about');
+                break;
+            }
+            case "services":{
+                navigate('/gallery');
+                break;
+            }
+            case "gallery":{
+                navigate('/gallery');
+                break;
+            }
+            case "blog":{
+                navigate('/blog');
+                break;
+            }
+            case "contact us":{
+                navigate('/contact');
+                break;
+            }
+            default:
+                navigate("/")
+        }
         setAnchorElNav(null);
     };
 
@@ -40,7 +100,7 @@ const Navbar = () => {
 
 
     return (
-        <AppBar position="fixed" sx={{height:"100px",justifyContent:"center",backgroundColor:"black"}}>
+        <AppBar position="sticky" sx={{height:"100px",justifyContent:"center",backgroundColor:"black", zIndex:1, top:"0"}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box display="flex">
@@ -121,15 +181,30 @@ const Navbar = () => {
                         LOGO
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, textTransform: "uppercase" ,justifyContent:"center",padding:"10px"}}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block',padding:"10px",fontSize:"18px",fontWeight:"600"}}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        {pages.map((page) => {
+                            return (
+                                page === "Services" ? (
+                                    <div className="menu-serv-wrapper">
+                                         <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block',padding:"10px",fontSize:"18px",fontWeight:"600"}} className='button-service'>Services</Button>
+                                         <ExpandMoreIcon sx={{color:"gray"}} className='expander-service'></ExpandMoreIcon>
+                                         <div className="drop-down">
+                                    
+                                                {options.map((op)=>{
+                                                    return (
+                                                        <div className='options-main-nav' onClick={()=>handleOptionNavigation(op)}>{op}</div>
+                                                    )
+                                                })}
+                                        
+                                         </div>
+                                    </div>
+                                   
+                                ):(
+                                    <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block',padding:"10px",fontSize:"18px",fontWeight:"600"}}>
+                                        {page}
+                                    </Button>
+                                )
+                            )
+                        })}
                     </Box>
 
                 </Toolbar>

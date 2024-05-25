@@ -1,0 +1,36 @@
+.menu-serv-wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+.drop-down{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 70%;
+    padding: 10px;
+    width: 200px;
+    cursor: pointer;
+}
+.options-main-nav{
+    color:black;
+    font-size: small;
+    padding: 20px;
+    width: 100%;
+    text-transform: none;
+}
+.expander-service{
+    visibility: hidden;
+}
+.menu-serv-wrapper:hover{
+    .drop-down{
+        display: block
+    }
+    .button-service{
+        color: gray;
+    }
+    .expander-service{
+        visibility: visible;
+    }
+}
